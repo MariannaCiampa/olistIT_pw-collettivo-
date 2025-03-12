@@ -1,5 +1,6 @@
 import pandas as pd
 import datetime
+import os
 
 
 def read_file():
@@ -14,7 +15,7 @@ def read_file():
         except OSError as ex:
             print(ex)
         else:
-            "Path inserito correttamente"
+            print("Path inserito correttamente")
             isValid = True
 
     else:
@@ -59,9 +60,23 @@ def check_null(df):
 def save_processed(df):
     #print(datetime.datetime.now())
     name = input("Qual è il nome del file?").strip().lower()
-    file_name = name + "_processed" + "_datetime " + str(datetime.datetime.now())
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_name = name + "_processed" + "_datetime " + timestamp + ".csv"
     print(file_name)
-    df.to_csv("../data/processed" + file_name, index=False)
+    if __name__ == "__main__":
+        directory_name = "../data/processed/"
+    else:
+        directory_name = "data/processed/"
+    df.to_csv(directory_name + file_name, index=False)
+
+
+if __name__ == "__main__":
+    #print(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
+    df = read_file()
+    save_processed(df)
+
+
+
 
 
 '''def caricamento_percentuale(df, cur, sql):
@@ -74,9 +89,3 @@ def save_processed(df):
             print(f"{round(perc)}% Completato")
             perc_int += 5
         cur.execute(sql, row.to_list())'''
-
-
-
-if __name__ == "__main__":
-    #read_file()
-    save_processed([])
