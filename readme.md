@@ -53,3 +53,14 @@ _**pippo**_
 * freight FLOAT (=costo di trasporto)
 
 (abbiamo escluso order_item)
+
+## TODO OPZIONALE
+* copia del file in input alla cartella raw
+* (fare in modo che il nome del file sia univoco, con data e ora)
+* creare il database da python(quindi non a mano da pgadmin)
+
+* controllo validità input
+* controllo su user e password prima di cancellare tabella (variabili di ambiente)
+* (chiedere in input, verificare validità, e solo nel caso autorizzare cancellazione della tabella)
+* inserimento colonna per tenere traccia della data in cui i dati sono stati inseriti nel database
+* integrare dati customers a partire dal cap
