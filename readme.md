@@ -64,3 +64,13 @@ _**pippo**_
 * (chiedere in input, verificare validità, e solo nel caso autorizzare cancellazione della tabella)
 * inserimento colonna per tenere traccia della data in cui i dati sono stati inseriti nel database
 * integrare dati customers a partire dal cap
+* gestione del tipo di valore da aggiornare in fill_null
+* formattazione stringhe (no caratteri speciali all'inizio e alla fine)(select_dtypes("object"))
+* codifica utf8
+* maiuscole all'inizio
+* solo lettere maiuscole e minuscole, apostrofo, spazio, trattino
+* finito tutto, visualizziamo un menù delle opzioni disponibili da eseguire sul database
+(tipo integrare dati su regioni-città,
+visualizzare i prodotti di una certa categoria/regione
+visualizzare clienti per regione etc)
+* a seconda della scelta dell'utente, richiameremo il metodo con questa funzione
